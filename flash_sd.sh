@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cd /home/kd/Downloads/ultra96/petalinux_build/2020.1/ultra96v2/images/linux
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd ${DIR}
 
 source ~/petalinux/2020.1/settings.sh
 petalinux-package --boot --fsbl zynqmp_fsbl.elf --fpga system.bit --u-boot --kernel --force
