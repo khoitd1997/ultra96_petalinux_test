@@ -1,10 +1,12 @@
 #!/bin/bash
 
+set -e
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-cd ${DIR}
+cd ${DIR}/images/linux
 
 source ~/petalinux/2020.1/settings.sh
-petalinux-package --boot --fsbl zynqmp_fsbl.elf --fpga system.bit --u-boot --kernel --force
+petalinux-package --boot --u-boot --kernel --force
 
 rm -rf /media/kd/boot/*
 cp BOOT.BIN image.ub boot.scr /media/kd/boot
