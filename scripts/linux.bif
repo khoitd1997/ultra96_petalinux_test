@@ -1,0 +1,9 @@
+the_ROM_image:
+{
+[fsbl_config] a53_x64
+[bootloader] boot_components/zynqmp_fsbl.elf
+[pmufw_image] boot_components/pmufw.elf
+[destination_device=pl] vivado_export/ULTRA96V2_wrapper.bit
+[destination_cpu=a53-0,exception_level=el-3,trustzone] boot_components/bl31.elf
+[destination_cpu=a53-0,exception_level=el-2] boot_components/u-boot.elf
+}
